@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/screens/auth.dart';
+import 'package:myapp/screens/chat.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:myapp/screens/splash.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -21,12 +24,21 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Flirting',
       theme: ThemeData().copyWith(
-        useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color.fromARGB(255, 61, 17, 177),
         ),
       ),
-      home: const AuthScreen(),
+      home: StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (ctx, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const SplashScreen();
+            }
+            if (snapshot.hasData) {
+              return const ChatScreen();
+            }
+            return const AuthScreen();
+          }),
     );
   }
 }

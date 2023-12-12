@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA3mSXHXwQVFhPuPLVvEoxn7ztjv3uvACQ',
-    appId: '1:1009371088519:android:813c9d139633f210739a22',
-    messagingSenderId: '1009371088519',
-    projectId: 'vidsh-bb7ea',
-    storageBucket: 'vidsh-bb7ea.appspot.com',
+    apiKey: 'AIzaSyD_HHMlDqAl-tKA1YX9wpri1QZ6UjVhObE',
+    appId: '1:163168369955:android:3afd936c14f711b41a2096',
+    messagingSenderId: '163168369955',
+    projectId: 'chatapp-c7357',
+    storageBucket: 'chatapp-c7357.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCfzRTf7Zsr5mzt-6PU2QIX8lyQp8jupFg',
-    appId: '1:1009371088519:ios:9577f1bc43215184739a22',
-    messagingSenderId: '1009371088519',
-    projectId: 'vidsh-bb7ea',
-    storageBucket: 'vidsh-bb7ea.appspot.com',
+    apiKey: 'AIzaSyBb2qdlLdfgdamsBklw8Drm4_TBJMAsplE',
+    appId: '1:163168369955:ios:ac45d2b6000c5a0e1a2096',
+    messagingSenderId: '163168369955',
+    projectId: 'chatapp-c7357',
+    storageBucket: 'chatapp-c7357.appspot.com',
     iosBundleId: 'com.example.myapp',
   );
 }

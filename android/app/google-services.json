@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "1009371088519",
-    "project_id": "vidsh-bb7ea",
-    "storage_bucket": "vidsh-bb7ea.appspot.com"
+    "project_number": "163168369955",
+    "project_id": "chatapp-c7357",
+    "storage_bucket": "chatapp-c7357.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1009371088519:android:813c9d139633f210739a22",
+        "mobilesdk_app_id": "1:163168369955:android:3afd936c14f711b41a2096",
         "android_client_info": {
           "package_name": "com.example.myapp"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "1009371088519-d4bpj85otoqauqkad2i5ibbgh3868r1c.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA3mSXHXwQVFhPuPLVvEoxn7ztjv3uvACQ"
+          "current_key": "AIzaSyD_HHMlDqAl-tKA1YX9wpri1QZ6UjVhObE"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1009371088519-d4bpj85otoqauqkad2i5ibbgh3868r1c.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
