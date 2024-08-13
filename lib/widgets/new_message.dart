@@ -2,18 +2,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class NewMessages extends StatefulWidget {
-  const NewMessages({
-    super.key,
-  });
+class NewMessage extends StatefulWidget {
+  const NewMessage({super.key});
 
   @override
-  State<StatefulWidget> createState() {
+  State<NewMessage> createState() {
     return _NewMessageState();
   }
 }
 
-class _NewMessageState extends State<NewMessages> {
+class _NewMessageState extends State<NewMessage> {
   final _messageController = TextEditingController();
 
   @override
@@ -29,8 +27,10 @@ class _NewMessageState extends State<NewMessages> {
       return;
     }
 
-    final user = FirebaseAuth.instance.currentUser!;
+    FocusScope.of(context).unfocus();
+    _messageController.clear();
 
+    final user = FirebaseAuth.instance.currentUser!;
     final userData = await FirebaseFirestore.instance
         .collection('users')
         .doc(user.uid)
@@ -39,31 +39,36 @@ class _NewMessageState extends State<NewMessages> {
     FirebaseFirestore.instance.collection('chat').add({
       'text': enteredMessage,
       'createdAt': Timestamp.now(),
-      'userid': user.uid,
+      'userId': user.uid,
       'username': userData.data()!['username'],
       'userImage': userData.data()!['image_url'],
     });
-
-    _messageController.clear();
   }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 15, right: 1, bottom: 14),
-      child: Row(children: [
-        Expanded(
-          child: TextFormField(
-            controller: _messageController,
-            autocorrect: true,
-            decoration: const InputDecoration(labelText: 'Enter message'),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: _messageController,
+              textCapitalization: TextCapitalization.sentences,
+              autocorrect: true,
+              enableSuggestions: true,
+              decoration: const InputDecoration(labelText: 'Send a message...'),
+            ),
           ),
-        ),
-        IconButton(
-          onPressed: _submitMessage,
-          icon: const Icon(Icons.send),
-        ),
-      ]),
+          IconButton(
+            color: Theme.of(context).colorScheme.primary,
+            icon: const Icon(
+              Icons.send,
+            ),
+            onPressed: _submitMessage,
+          ),
+        ],
+      ),
     );
   }
 }
