@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/screens/auth.dart';
-import 'package:myapp/screens/chat.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:myapp/screens/home.dart';
 import 'package:myapp/screens/splash.dart';
 import 'firebase_options.dart';
 
@@ -12,7 +12,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const App());
-}
+} 
 
 class App extends StatelessWidget {
   const App({
@@ -35,7 +35,7 @@ class App extends StatelessWidget {
               return const SplashScreen();
             }
             if (snapshot.hasData) {
-              return const ChatScreen();
+              return HomeScreen();
             }
             return const AuthScreen();
           }),
