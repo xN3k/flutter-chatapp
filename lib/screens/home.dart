@@ -25,6 +25,9 @@ class HomeScreen extends StatelessWidget {
           IconButton(
               onPressed: signOut, icon: const Icon(Icons.logout_outlined))
         ],
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        foregroundColor: Colors.grey,
       ),
       body: _buildUserList(),
     );
@@ -57,6 +60,7 @@ class HomeScreen extends StatelessWidget {
     if (userData['email'] != _authService.getCurrentUser()!.email) {
       return UserTile(
           text: userData['email'],
+          userImage: userData['profileImage'],
           onTap: () {
             // Navigate to chat screen
             Navigator.push(
