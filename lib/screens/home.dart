@@ -69,6 +69,7 @@ class HomeScreen extends StatelessWidget {
                 builder: (context) => ChatScreen(
                   receiverEmail: userData["email"],
                   receiverID: userData["uid"],
+                  userImage: userData['profileImage'],
                 ),
               ),
             );

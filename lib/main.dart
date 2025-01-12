@@ -12,7 +12,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const App());
-} 
+}
 
 class App extends StatelessWidget {
   const App({
@@ -23,9 +23,10 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FlutterChat',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData().copyWith(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 61, 17, 177),
+          seedColor: const Color.fromARGB(255, 68, 138, 255),
         ),
       ),
       home: StreamBuilder(
